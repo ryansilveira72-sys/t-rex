@@ -1,0 +1,18 @@
+/* Estilo para a tag <body> */
+body {
+  /* margin: 0; → Remove a margem padrão do navegador para ambas as tags.
+  Isso evita aquele "espaço" em torno da página que normalmente aparece por padrão. */
+  margin: 0;
+  /* padding: 0; → Remove o preenchimento (ou espaçamento interno) que os navegadores 
+  também adicionam por padrão ao redor do conteúdo da página. Assim, o conteúdo começa 
+  exatamente no canto superior esquerdo. */
+  padding: 0;
+}
+
+/* Estilo para a tag <canvas>, que é comumente usada para desenhar gráficos com JavaScript */
+canvas {
+  /* display: block; → Altera o comportamento padrão do <canvas>, que originalmente é inline 
+  (comportamento de elementos em linha). Com block, o <canvas> ocupa a largura total disponível, 
+  como se fosse um "bloco", o que é ideal para manter o layout organizado. */
+  display: block;
+}
