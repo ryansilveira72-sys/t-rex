@@ -29,13 +29,13 @@ trex = createSprite (50,160,20,50);
 function draw(){
   background ("white");
 
-  if(keyDown("space")){ 
-    trex.velocityY = -10
+  if(keyDown("space"))&& trex.y >= 100 { 
+    trex.velocityY = -10;
   }
 
   trex.velocityY += 0.8;
 
-  trex.collide(ground);
+  trex.collide(invisibleGround);
 
   ground.velocityX = -2;
 
