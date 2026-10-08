@@ -2,10 +2,13 @@
 let trex;
 let trexRunning;
 let ground;
+let groundImage;
+let invisibleGround;
 
 //pré carregamentos
 function preload(){
   trexRunning = loadAnimation ("trex1.png","trex2.png","trex3.png");
+  groundImage = loadImage("ground2.png");
 }
   
 
@@ -18,7 +21,8 @@ trex = createSprite (50,160,20,50);
   trex.x = 50;
 
   ground = createSprite(200,180,400,20);
-  
+  ground.addImage("ground", groundImage);
+  invisibleGround = createSprite(200, 190, 400, 10);    
 }
 //desenha os paranaue tudo
 function draw(){
@@ -29,6 +33,14 @@ function draw(){
   }
 
   trex.velocityY += 0.8;
+
+  trex.collide(ground);
+
+  ground.velocityX = -2;
+
+  if(ground.x < 0){
+    ground.x = ground.width/2;
+  }
   
   drawSprites ();
 }
