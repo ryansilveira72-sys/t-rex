@@ -22,7 +22,8 @@ trex = createSprite (50,160,20,50);
 
   ground = createSprite(200,180,400,20);
   ground.addImage("ground", groundImage);
-  invisibleGround = createSprite(200, 190, 400, 10);    
+  invisibleGround = createSprite(200, 190, 400, 10);
+  invisibleGround.visible = false;
 }
 //desenha os paranaue tudo
 function draw(){
