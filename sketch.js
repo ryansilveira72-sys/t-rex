@@ -74,6 +74,7 @@ function spawnClouds(){
     cloud.scale = 0.4;
     cloud.y = Math.round (random(10,60));
    cloud.depth = trex.depth;
+    trex.depth +1;
   }
 }
   
