@@ -70,6 +70,10 @@ function spawnClouds(){
   if(frameCount % 60 === 0){
       cloud = createSprite(600, 100, 40, 10);
       cloud.velocityX = -3;
+    cloud.addImage(cloudImage);
+    cloud.scale = 0.4;
+    cloud.y = Math.round (random(10,60));
+   cloud.depth = trex.depth;
   }
 }
   
