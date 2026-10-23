@@ -12,11 +12,24 @@ let cloud;
 let cloudImage;
 let cloudsGroup;
 
+//obstáculos
+let obstacle;
+let obstacle1,obstacle2,obstacle3,obstacle4,obstacle5,obstacle6;
+let obstaclesGroup;
+
+
 //pré carregamentos
 function preload(){
   trexRunning = loadAnimation ("trex1.png","trex2.png","trex3.png");
   groundImage = loadImage("ground2.png");
   cloudImage = loadImage("cloud.png");
+  obstacle1 = loadImage("obstacle1.png");
+  obstacle2 = loadImage("obstacle2.png");
+  obstacle3 = loadImage("obstacle3.png");
+  obstacle4 = loadImage("obstacle4.png");
+  obstacle5 = loadImage("obstacle5.png");
+  obstacle6 = loadImage("obstacle6.png");
+  
 }
   
 
@@ -62,9 +75,17 @@ function draw(){
   }
 
   spawnClouds();
+spawnObstacles();
+
   
-  drawSprites ();
+
+  
+  drawSprites();
 }
+    
+  
+  
+
 
 function spawnClouds(){
   if(frameCount % 60 === 0){
@@ -78,4 +99,14 @@ function spawnClouds(){
     cloud.lifetime = 600/3;
   }
 }
+
+function spawnObstacles(){
+if(frameCount % 60 === 0){
+obstacle = createSprite(600,165,10,40);
+  obstacle.velocityX = -6;
   
+  
+}
+  
+  
+}
