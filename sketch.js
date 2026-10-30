@@ -17,6 +17,9 @@ let obstacle;
 let obstacle1,obstacle2,obstacle3,obstacle4,obstacle5,obstacle6;
 let obstaclesGroup;
 
+//pontuação
+let score = 0;
+
 
 //pré carregamentos
 function preload(){
@@ -54,6 +57,10 @@ function setup(){
 //desenha os paranaue tudo
 function draw(){
   background ("white");
+
+  text("score: "+ score,500,50);
+  score = score + Math.round(frameCount/60);
+  
 
   //pulo
   if(keyDown("space"))&& trex.y >= 100 { 
@@ -104,7 +111,32 @@ function spawnObstacles(){
 if(frameCount % 60 === 0){
 obstacle = createSprite(600,165,10,40);
   obstacle.velocityX = -6;
-  
+  let rand = Math.round(random(1,6));
+  switch (rand){
+    case 1:
+      obstacle.addImage(obstacle1);
+      break;
+    case 2:
+      obstacle.addImage(obstacle2);
+      break;
+    case 3:
+      obstacle.addImage(obstacle3);
+      break;
+    case 4:
+      obstacle.addImage(obstacle4);
+      break;
+    case 5:
+      obstacle.addImage(obstacle5);
+      break;
+    case 6:
+      obstacle.addImage(obstacle6);
+      break;
+    default:break;
+      
+  }
+obstacle.scale = 0.5;
+  obstacle.lifetime = 300;
+     
   
 }
   
