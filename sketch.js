@@ -20,6 +20,13 @@ let obstaclesGroup;
 //pontuação
 let score = 0;
 
+//constante
+const PLAY = 1;
+const END = 0;
+
+//game State
+let gameState = PLAY; 
+
 
 //pré carregamentos
 function preload(){
@@ -40,6 +47,8 @@ function preload(){
 function setup(){
   createCanvas(600,200);
 
+  
+
   //sprite do T-Rex
   trex = createSprite (50,160,20,50); 
   trex.addAnimation ("running",trexRunning);
@@ -52,6 +61,9 @@ function setup(){
   //chão invisível
   invisibleGround = createSprite(200, 190, 400, 10);
   invisibleGround.visible = false;
+
+  obstaclesGroup = mew Group();
+  cloudsGroup = mew Group(); 
 }
 
 //desenha os paranaue tudo
@@ -60,6 +72,15 @@ function draw(){
 
   text("score: "+ score,500,50);
   score = score + Math.round(frameCount/60);
+
+  if(gameState === PLAY){
+
+    
+  }
+  else if(gameState === END){
+    
+    
+  }
   
 
   //pulo
@@ -79,6 +100,8 @@ function draw(){
   //reconfiguração do chão
   if(ground.x < 0){
     ground.x = ground.width/2;
+
+    
   }
 
   spawnClouds();
@@ -104,6 +127,7 @@ function spawnClouds(){
    cloud.depth = trex.depth;
     trex.depth += 1;
     cloud.lifetime = 600/3;
+    cloudsGroup.add(cloud);
   }
 }
 
@@ -136,9 +160,14 @@ obstacle = createSprite(600,165,10,40);
   }
 obstacle.scale = 0.5;
   obstacle.lifetime = 300;
+  obstacleGroup.add(obstacle);
+  
      
   
 }
   
   
 }
+
+
+
