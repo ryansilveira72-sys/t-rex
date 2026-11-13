@@ -71,41 +71,50 @@ function draw(){
   background ("white");
 
   text("score: "+ score,500,50);
-  score = score + Math.round(frameCount/60);
-
+  
   if(gameState === PLAY){
-
+    //
+    ground.velocityX = -2;
+    //
+    score = score + Math.round(frameCount/60);
+    //
+    if(ground.x < 0){
+    ground.x = ground.width/2;
+    }
+    //pulo
+      if(keyDown("space"))&& trex.y >= 100 { 
+    trex.velocityY = -10;
+      }
+     //gravidade
+      trex.velocityY += 0.8;
+    //nuvem 
+      spawnClouds();
+    //obstáculos 
+spawnObstacles();
+if(obstacleGroup.isTouching(trex)){
+  gameState = END;
+  
+}
+    
+    
     
   }
   else if(gameState === END){
     
     
   }
+
+
   
-
-  //pulo
-  if(keyDown("space"))&& trex.y >= 100 { 
-    trex.velocityY = -10;
-  }
-
-  //gravidade
-  trex.velocityY += 0.8;
-
   //colisão com chão
   trex.collide(invisibleGround);
 
-  //movimento do chão
-  ground.velocityX = -2;
+  
+  
+  
+  
 
-  //reconfiguração do chão
-  if(ground.x < 0){
-    ground.x = ground.width/2;
-
-    
-  }
-
-  spawnClouds();
-spawnObstacles();
+  
 
   
 
