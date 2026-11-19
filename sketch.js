@@ -100,6 +100,9 @@ if(obstacleGroup.isTouching(trex)){
     
   }
   else if(gameState === END){
+   ground.velocityX = 0;
+    obstaclesGroup.setVelocityXEach(0);
+    cloudsGroup.setVelocityXEach(0);
     
     
   }
@@ -114,7 +117,6 @@ if(obstacleGroup.isTouching(trex)){
   
   
 
-  
 
   
 
