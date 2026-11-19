@@ -49,6 +49,8 @@ function setup(){
 
   
 
+  
+
   //sprite do T-Rex
   trex = createSprite (50,160,20,50); 
   trex.addAnimation ("running",trexRunning);
@@ -64,6 +66,11 @@ function setup(){
 
   obstaclesGroup = mew Group();
   cloudsGroup = mew Group(); 
+
+  trex.debug = true;
+  trex.setCollider("circle",0,0,40);
+
+  
 }
 
 //desenha os paranaue tudo
@@ -104,6 +111,7 @@ if(obstacleGroup.isTouching(trex)){
     obstaclesGroup.setVelocityXEach(0);
     cloudsGroup.setVelocityXEach(0);
     
+ 
     
   }
 
